@@ -1078,7 +1078,8 @@ class _BillPageState extends State<BillPage> {
 
     if (!mounted) return;
     setState(() {
-      bill = details;
+      final totals = details['totals'];
+      bill = {...details, 'total': totals is Map ? totals['total'] ?? details['total'] : details['total']};
       final empresa = data['company'] ?? details['company'];
       emisor = empresa is Map ? Json.from(empresa) : {};
       customer = rawCustomer is Map ? Json.from(rawCustomer) : {};
