@@ -1,0 +1,5 @@
+env.json
+*.sqlite*
+.env*
+.dart_tool/
+build/

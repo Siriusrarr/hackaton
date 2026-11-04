@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: facturin-demo
+    runtime: docker
+    plan: free
+    rootDir: facturin-render
+    healthCheckPath: /healthz
+    envVars:
+      - key: FACTUS_CLIENT_ID
+        sync: false
+      - key: FACTUS_CLIENT_SECRET
+        sync: false
+      - key: FACTUS_PASSWORD
+        sync: false
+      - key: PAY_EMAIL
+        sync: false
+      - key: PAY_PASS
+        sync: false
+      - key: DEMO_PASSWORD
+        generateValue: true
